@@ -21,7 +21,7 @@ Runs **offline, with no API key, for ₹0**. An optional LLM step handles the 2�
 
 ---
 
-## Quick start (clean machine, Python 3.10+)
+## Quick start (clean machine, Python 3.10+; tested on 3.11 and 3.13)
 
 ```bash
 pip install -r requirements.txt
@@ -148,7 +148,7 @@ return about the same product counted.
 | Leaderboard | Delivered as asked: tickets closed per week, ranked **within team** on a 4-week average; Tier 2 separate, in days | Counted by the week a ticket was **closed**. A weekly rank barely predicts next week's (rank correlation 0.13 in Chat). One Billing agent is alone on the Day shift, which explains that agent's volume. Policy §6 bars ranking Tier 2 on volume. |
 | Cost per contact | Policy §4 per-channel figures (chat ₹210 … voice ₹520) | The email thread settles ₹290 blended over Arjun's ₹180. We use the channel each repeat actually came in on. |
 | Scale | Totals × ~4.3 | The export has ~150 tickets a week; the brief says ~650. We assume it samples whole customers, so rates carry over (see limitations). |
-| `GW-OTHER` refunds | Not counted as goodwill breaches | The code means "Goodwill / Other". None of the 40 over-cap notes mention goodwill: they are product-fault refunds, reported separately for review. |
+| `GW-OTHER` refunds | Not counted as goodwill breaches | The code means "Goodwill / Other". None of the 37 `GW-OTHER` refunds over the ₹500 cap mention goodwill in the note. 40 `GW-OTHER` refunds are for product faults; they are reported separately, for review. |
 | Refund + replacement breaches | Only counted when both tickets quote the same order ID | In the case review, 14 of 15 order-ID matches were real, and 0 of 5 customer + product matches could be confirmed. |
 | Legacy money values | Treated as rupees | Policy §9 warns about a "native unit", but refund ÷ order value falls between 0.1 and 1.0 in both systems, and migrated duplicates carry identical amounts. |
 | Client data in the repo | Not published | `data/` is git-ignored, and committed validation files hold ticket IDs and labels only. Scripts that need the text read it from `data/` into local `*_sheet.csv` files (git-ignored). |
@@ -157,7 +157,7 @@ return about the same product counted.
 
 ## Results (latest complete week, 2026-W26)
 
-- **Goal:** cut same-issue repeat contacts from **12.9% to 9.8%**, about **₹67,000 a quarter** at 650 tickets a week (≈₹60,000 net of an estimated ₹28,000 a year in messages). 47% of repeats are customers chasing a refund, delivery, pickup or repair; proactive updates answer those before they ask.
+- **Goal:** cut same-issue repeat contacts from **12.9% to 9.8%**, about **₹67,000 a quarter** at 650 tickets a week (≈₹60,000 net of an estimated ₹28,000 a year in messages). 47% of repeats are customers chasing a delivery, refund, pickup, repair or double-charge refund; proactive updates answer those before they ask.
 - **Money for Finance:** about **₹4.2 lakh a year** in confirmed policy breaches (refund *and* replacement on the same order; goodwill over ₹500 hidden under the `RETURN-QC-OK` code). For review, not counted:
   - **40 product-fault refunds** under the catch-all `GW-OTHER` code, mostly past the 7-day DOA window and by Tier 1: they look like warranty buy-backs without Tier 2 approval;
   - **749 refunds** that appear in agent notes with **no amount recorded** anywhere: reconcile against the payment gateway;
