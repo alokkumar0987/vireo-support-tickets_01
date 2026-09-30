@@ -1,0 +1,13 @@
+# Tested on Python 3.13 with: pandas 2.2.3, numpy 2.1.3, scikit-learn 1.6.1, plotly 5.24.1,
+# streamlit 1.45.1, openai 2.24.0; a fresh install on 30 Sep 2026 (pandas 2.3.3, scikit-learn 1.7.2,
+# streamlit 1.64.0) also passed all tests. Upper bounds keep a fresh install off untested major versions.
+pandas>=2.0,<3
+numpy>=1.24,<3
+scikit-learn>=1.3,<1.8
+plotly>=5.18,<7
+streamlit>=1.30,<2
+openai>=1.40,<3
+python-dotenv>=1.0,<2
+pytest>=7.4,<10
+# Optional, only for analysis/cluster_themes.py (pulls in torch, several GB):
+#   pip install sentence-transformers

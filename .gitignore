@@ -1,0 +1,32 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Generated reports and run logs. cache/llm_labels.jsonl IS committed: it lets reviewers without an
+# API key reproduce the LLM themes and train the TF-IDF model (nothing is re-sent)
+*.report.md
+cache/*.log
+# Regenerated from llm_labels.jsonl in ~2s (src/cascade.py) / by analysis/cluster_themes.py
+cache/theme_model.joblib
+cache/*.npy
+
+# Client data from the brief's pack: not published. Copy the pack files into data/ (see README).
+data/*
+!data/.gitkeep
+
+# Anything carrying customer text stays local. Committed validation files hold ticket ids + labels only;
+# the *_sheet.csv files (made by the validation scripts from data/) are for reading/labelling.
+validation/*_sheet.csv
+validation/check_100.json
+# Sample output quotes customer messages: regenerate with `python run.py --report all --output report.md`
+report.md
+
+# Submission documents: shared through the form, not the repo
+submission-form.md
+video_walkthrough_script.md
+memo_to_priya.md
+CLAUDE.md
