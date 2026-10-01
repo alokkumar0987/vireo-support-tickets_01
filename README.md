@@ -191,7 +191,9 @@ data/                    the pack goes here (git-ignored)
 ```
 
 ---
+## 🎥 Demo
 
+[![Watch the Demo](https://img.youtube.com/vi/CrIZeg2EuaE/maxresdefault.jpg)](https://youtu.be/CrIZeg2EuaE)
 ## Known limitations
 
 - **Accuracy will be lower on real tickets.** The ticket text is heavily templated, so expect worse than 99% on real, messier text.
