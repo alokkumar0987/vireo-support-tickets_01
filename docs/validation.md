@@ -87,7 +87,8 @@ Policy §10 defines a repeat contact as *the same customer about the same issue 
 
 **"Rising theme" alerts:**
 - **The test:** a Poisson test against the previous 8 weeks, p < 0.01.
-- **Backtest over 30 weeks × 19 themes:** 7 alerts, where **~6 would be expected from chance alone**. So a single alert means little, and the digest says so ("two weeks running = a real trend"). The only repeated signal was Audio fault in W49 and W50.
+- **Backtest over the latest 30 weeks (2025-W49 to 2026-W26, 541 theme-weeks):** 8 alerts, where **at most ~5 would be expected from chance alone**. So a single alert means little, and the digest says so ("two weeks running = a real trend"). The only repeated signal in this window was Audio fault in W49 and W50.
+- **The window matters:** across all 69 testable weeks there were 20 alerts, and 30-week windows range from 5 to 14. The busiest stretch, 2025-W41 to W46, had an alert every week, but each week a different theme (Invoice, Damage, Refund, Address change twice, Pickup). That looks like a festive-season volume shift, not one emerging problem. The alert fires somewhat more often than chance, not much more.
 - **A real spike does trigger it:** a synthetic jump from 20 to 40 tickets fires the alert, and 20 to 24 does not (`tests/test_digest.py`).
 
 **Manufacturing lots:**
